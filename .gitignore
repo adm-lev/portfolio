@@ -8,7 +8,7 @@ __pycache__/
 
 
 /venv
-*/settings.py
+universe/universe/settings.py
 
 # Distribution / packaging
 .Python
