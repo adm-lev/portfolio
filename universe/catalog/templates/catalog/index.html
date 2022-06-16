@@ -1,0 +1,23 @@
+{% extends 'catalog/base_generic.html' %}
+
+{% block content %}
+<h1>Local Library</h1>
+<p>wellcome to my library! </p>
+
+<h2>Dynamic content</h2>
+
+<p>The library has the folowing record counts: </p>
+
+<ul>
+    <li>Books: {{ num_books }}</li>
+    <li>Genres: {{ num_genres }}</li>
+    <li>Authors: {{ num_authors }}</li>
+</ul>
+
+
+
+
+
+
+
+{% endblock content %}
