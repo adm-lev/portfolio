@@ -1,14 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'catalog/styles.css' %}">
-    {% block title %}<title>Local library</title>{% endblock title %}
+
+    <title>{% block title %}Local library{% endblock title %}</title>
+    {% block css_extra %}
+    <link rel="stylesheet" type="text/css" href="{% static 'catalog/css/styles.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'catalog/images/321.png' %}">
+    {% endblock css_extra %}
 </head>
 <body>
 {% block sidebar %}
 <a href="/">Main Page</a>
+<img src="{% static 'catalog/images/12.jpeg' %}" alt="picture!!!!!">
 <ul>
     <li><a href="{% url 'library' %}">Home</a></li>
     <li><a href="{% url 'books' %}">Books</a></li>
