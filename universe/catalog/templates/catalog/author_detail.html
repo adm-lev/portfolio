@@ -1,0 +1,19 @@
+{% extends 'catalog/base_generic.html' %}
+
+
+
+
+
+{% block title %}{% endblock title %}
+
+
+
+
+{% block content %}
+<h1>{{ author.first_name }} {{ author.last_name }}</h1>
+
+<p>Даты жизни: {{ author.date_of_birth }} - {{ author.date_to_death }}</a></p>
+<p>Биография <br> {{ author.biography }}</p>
+
+
+{% endblock content %}

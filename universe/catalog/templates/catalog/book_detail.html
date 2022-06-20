@@ -10,13 +10,13 @@
 
 
 {% block content %}
-<h1>Title: {{ book.title }}</h1>
+<h1>Название: {{ book.title }}</h1>
 
-<p>Author: <a href="#">{{ book.author }}</a></p>
-<p>Summary: {{ book.summary }}</p>
+<p>Автор: <a href="#">{{ book.author }}</a></p>
+<p>Аннотация: {{ book.summary }}</p>
 <p>ISBN: {{ book.isbn }}</p>
-<p>Language: {{ book.language }}</p>
-<p>Genre: {% for genre in book.genre.all %} {{ genre }}
+<p>Язык: {{ book.language }}</p>
+<p>Жанр: {% for genre in book.genre.all %} {{ genre }}
     {% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
 

@@ -50,7 +50,8 @@ class Author(models.Model):
     first_name = models.CharField(max_length=100, verbose_name='Имя')
     last_name = models.CharField(max_length=100, verbose_name='Фамилия')
     date_of_birth = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
-    date_to_death = models.DateField( null=True, blank=True, verbose_name='Дата смерти')
+    date_to_death = models.DateField(null=True, blank=True, verbose_name='Дата смерти')
+    biography = models.TextField(help_text='Добавьте биографию', verbose_name='Биография', null=True, blank=True)
 
     def get_absolute_url(self):
         """
