@@ -3,7 +3,7 @@
 
 
 
-{% block title %}Book list{% endblock title %}
+{% block title %}Авторы{% endblock title %}
 
 
 
@@ -14,7 +14,7 @@
 {% if author_list %}
 <ul>
     {% for author in author_list %}
-    <li><a href="{{ author.get_abdolute_url }}">{{ author.first_name }}, {{ author.last_name }}</a>{{ author }}</li>
+    <li><a href="{{ author.get_absolute_url }}">{{ author.first_name }}, {{ author.last_name }}</a>{{ author }}</li>
     {% endfor %}
 </ul>
 {% else %}

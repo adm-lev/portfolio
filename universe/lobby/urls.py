@@ -7,3 +7,7 @@ urlpatterns = [
     path('catalog/', include('catalog.urls'), name='library'),
 
 ]
+
+urlpatterns += [
+    path(r'accounts/', include('django.contrib.auth.urls')),
+]

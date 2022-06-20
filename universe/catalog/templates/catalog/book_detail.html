@@ -4,7 +4,7 @@
 
 
 
-{% block title %}Book list{% endblock title %}
+{% block title %}{% endblock title %}
 
 
 
@@ -12,16 +12,12 @@
 {% block content %}
 <h1>Title: {{ book.title }}</h1>
 
-{% if book_list %}
-<ul>
-    {% for book in book_list %}
-    <li><a href="{{ book.get_abdolute_url }}">{{ book.title }}</a>{{ book.author }}</li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>There are no books in the library</p>
-{% endif %}
-
+<p>Author: <a href="#">{{ book.author }}</a></p>
+<p>Summary: {{ book.summary }}</p>
+<p>ISBN: {{ book.isbn }}</p>
+<p>Language: {{ book.language }}</p>
+<p>Genre: {% for genre in book.genre.all %} {{ genre }}
+    {% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
 
 
