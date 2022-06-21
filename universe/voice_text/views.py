@@ -1,3 +1,17 @@
 from django.shortcuts import render
+# from .models import Book, Author, Genre
+from django.views import generic
 
-# Create your views here.
+
+def index(request):
+    """
+
+    :param request:
+    :return:
+    """
+
+    return render(
+        request,
+        'voice_text/index.html',
+
+    )

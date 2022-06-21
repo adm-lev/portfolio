@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+
+    <title>{% block title %}seabattle{% endblock title %}</title>
+    {% block css_extra %}
+    <link rel="stylesheet" type="text/css" href="{% static 'catalog/css/styles.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'checkers/images/chck_logo.jpeg' %}">
+    {% endblock css_extra %}
+</head>
+<body>
+
+{% block sidebar %}
+<ul>
+    {% if user.is_authenticated %}
+        <li>User: {{ user.get_username }}</li>
+        <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
+    {% else %}
+        <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+    {% endif %}
+</ul>
+<a href="/">Main Page</a>
+<img src="{% static 'checkers/images/checkers.jpg' %}" width="200" alt="picture!!!!!">
+<ul>
+    <li><a href="{% url 'seabattle' %}">Home</a></li>
+    <li><a href="#">something</a></li>
+    <li><a href="#">something else</a></li>
+</ul>
+{% endblock sidebar %}
+{% block content %}{% endblock content %}
+</body>
+</html>

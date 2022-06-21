@@ -35,14 +35,24 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/devlev/portfolio/universe/voice_text",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/universe/voice_text" />
+      <recent name="$PROJECT_DIR$/universe/voice_recorder" />
+      <recent name="$PROJECT_DIR$/universe/tutorial_english" />
+      <recent name="$PROJECT_DIR$/universe/tic_tac_toe" />
+      <recent name="$PROJECT_DIR$/universe/text_voice" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/universe/catalog/static/catalog/css" />
-      <recent name="$PROJECT_DIR$/universe/catalog/static/catalog/images" />
-      <recent name="$PROJECT_DIR$/universe/catalog/static/catalog" />
+      <recent name="$PROJECT_DIR$/universe/file_converter/templates/file_converter" />
+      <recent name="$PROJECT_DIR$/universe/voice_text/templates/voice_text" />
+      <recent name="$PROJECT_DIR$/universe/voice_text/static/voice_text" />
+      <recent name="$PROJECT_DIR$/universe/voice_recorder/templates/voice_recorder" />
+      <recent name="$PROJECT_DIR$/universe/voice_recorder/static/voice_recorder" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
