@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'lobby/css/styles.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -22,19 +24,27 @@
 
 
     <nav>
-        <a href="{% url 'home' %}">Main</a>
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'library' %}">Library</a>
-        <a href="{% url 'checkers' %}">Checkers</a>
-        <a href="{% url 'exchange_rates' %}">exchange rates</a>
-        <a href="{% url 'file_converter' %}">file converter</a>
-        <a href="{% url 'guitar_chords' %}">guitar chords</a>
-        <a href="{% url 'seabattle' %}">sea battle</a>
-        <a href="{% url 'text_voice' %}">text to voice</a>
-        <a href="{% url 'tic_tac_toe' %}">tic tac toe</a>
-        <a href="{% url 'tutorial_english' %}">learning english</a>
-        <a href="{% url 'voice_recorder' %}">voice recorder</a>
-        <a href="{% url 'voice_text' %}">voice to text</a>
+        <ul>
+        <li><a href="{% url 'home' %}">Главная страница</a></li>
+        <li><a href="{% url 'about' %}">О проекте</a></li>
+        </ul>
+        <hr>
+        <ul>
+
+        <li><a href="{% url 'library' %}">Персональная библиотека</a></li>
+        <li><a href="{% url 'checkers' %}">Игра "Шашки"</a></li>
+        <li><a href="{% url 'seabattle' %}">Игра "Морской бой"</a></li>
+        <li><a href="{% url 'tic_tac_toe' %}">Игра "Крестики нолики"</a></li>
+        <li><a href="{% url 'guitar_chords' %}">Аккорды для гитары</a></li>
+        <li><a href="{% url 'exchange_rates' %}">Курсы валют</a></li>
+        <li><a href="{% url 'file_converter' %}">Конвертер файлов</a></li>
+        <li><a href="{% url 'text_voice' %}">Конвертер текста в аудио</a></li>
+        <li><a href="{% url 'voice_text' %}">Конвертер голоса в текст</a></li>
+        <li><a href="{% url 'voice_recorder' %}">Запись голоса</a></li>
+        <li><a href="{% url 'tutorial_english' %}">Самоучитель английского языка</a></li>
+
+
+            </ul>
       </nav>
 {% endblock sidebar %}
 

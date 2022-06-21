@@ -3,14 +3,6 @@
     padding: 0;
 }
 
-ul {
-    color: #fca205;
-}
-
-a {
-    color: green;
-}
-
-p {
-    color: blue;
+body {
+    background: #ffe4e1;
 }

@@ -35,24 +35,24 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/devlev/portfolio/universe/voice_text",
+    "last_opened_file_path": "/home/devlev/portfolio/universe/voice_text/static",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/universe/voice_text" />
-      <recent name="$PROJECT_DIR$/universe/voice_recorder" />
-      <recent name="$PROJECT_DIR$/universe/tutorial_english" />
-      <recent name="$PROJECT_DIR$/universe/tic_tac_toe" />
-      <recent name="$PROJECT_DIR$/universe/text_voice" />
+      <recent name="$PROJECT_DIR$/universe/voice_text/static" />
+      <recent name="$PROJECT_DIR$/universe/voice_recorder/static/voice_recorder/css" />
+      <recent name="$PROJECT_DIR$/universe/tutorial_english/static/tutorial_english/css" />
+      <recent name="$PROJECT_DIR$/universe/tic_tac_toe/static/tic_tac_toe/css" />
+      <recent name="$PROJECT_DIR$/universe/text_voice/static/text_voice/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/universe/file_converter/templates/file_converter" />
-      <recent name="$PROJECT_DIR$/universe/voice_text/templates/voice_text" />
-      <recent name="$PROJECT_DIR$/universe/voice_text/static/voice_text" />
-      <recent name="$PROJECT_DIR$/universe/voice_recorder/templates/voice_recorder" />
-      <recent name="$PROJECT_DIR$/universe/voice_recorder/static/voice_recorder" />
+      <recent name="$PROJECT_DIR$/universe/guitar_chords/static/guitar_chords" />
+      <recent name="$PROJECT_DIR$/universe/voice_text/static/voice_text/css" />
+      <recent name="$PROJECT_DIR$/universe/lobby/static/lobby/css" />
+      <recent name="$PROJECT_DIR$/universe/lobby/static/lobby/images" />
+      <recent name="$PROJECT_DIR$/universe/guitar_chords/templates/guitar_chords" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
