@@ -11,8 +11,8 @@ urlpatterns = [
     re_path(r'^authors/$', views.AuthorListView.as_view(), name='authors'),
     re_path(r'^book/(?P<pk>\d+)$', views.BookDetailView.as_view(), name='book-detail'),
     re_path(r'^author/(?P<pk>\d+)$', views.AuthorDetailView.as_view(), name='author-detail'),
-    re_path(r'special/^$', views.special, name='book-text'),
-    re_path(r'^special/(?P<pk>\d+)$', views.special, name='special'),
+    # re_path(r'special/^$', views.reading, name='book-text'),
+    re_path(r'^special/(?P<pk>\d+)$', views.reading, name='special'),
 
 ]
 

@@ -4,8 +4,12 @@
 
 {% block content %}
 
-<p>hello</p>
-<p>{{ text }}</p>
+
+<div class="text-container">
+{% for para in docfile.paragraphs %}
+        <p class="text-paragraph text-element">{{ para.text }}</p>
+{% endfor %}
+</div>
 
 
 

@@ -6,3 +6,13 @@
 body {
     background: #ffe4e1;
 }
+
+.text-container {
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: justify;
+}
+
+.text-paragraph {
+    text-indent: 30px;
+}

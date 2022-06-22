@@ -31,17 +31,13 @@ def reading(request, pk):
     book_path = summary.unit_file
     docfile = docx.Document(os.path.join('media', str(book_path)))
 
+    return render(request, 'catalog/book_read.html', context={'docfile': docfile})
+
 
 def special(request, pk):
     summary = Book.objects.get(id=pk)
     book_path = summary.unit_file
-    # with open(os.path.join('media', str(book_path)), 'r') as f:
-    #     file_content = f.read()
-    #     f.close()
-    # context = {'file_content': file_content}
-    # with textract.process(os.path.join('media', str(book_path))) as text:
-    #     text_file = text
-    #     text.write()
+
     text = textract.process(os.path.join('media', str(book_path)))
     text_file = text.decode('utf8')
 
