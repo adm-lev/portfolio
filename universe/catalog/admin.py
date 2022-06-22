@@ -7,10 +7,17 @@ admin.site.register(Author)
 admin.site.register(Genre)
 
 
-# class AuthorAdmin(admin.ModelAdmin):
-#     list_display = ('last_name', 'first_name')
+# class BookInline(admin.StackedInline):
+#     model = Book
+#     extra = 2
 #
 #
 # class BookAdmin(admin.ModelAdmin):
-#     list_display = ('title', 'author')
+#
+#     fields = ['title', 'author', 'summary', 'isbn', 'genre', 'language', 'picture']
+#     inlines = [BookInline]
+#     list_filter = ['title']
+#
+#
+# admin.site.register(Book, BookAdmin)
 

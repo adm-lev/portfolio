@@ -27,6 +27,10 @@ class Book(models.Model):
     isbn = models.CharField('ISBN', max_length=20, help_text='20 символов')
     genre = models.ManyToManyField('Genre', help_text='Укажите жанр', verbose_name='Жанр')
     language = models.CharField(max_length=20, help_text='Укажите язык', verbose_name='Язык', null=True, blank=True)
+    unit_file = models.FileField(verbose_name='Электронный экземпляр', help_text='Загрузите электронный вариант',
+                                 null=True, blank=True, upload_to='books')
+    picture = models.ImageField(verbose_name='Обложка книги', help_text='Загрузите обложку',
+                                upload_to='books/img/%Y/%m/%d', null=True, blank=True)
 
     def __str__(self):
         """
@@ -41,6 +45,22 @@ class Book(models.Model):
         :return:
         """
         return reverse('book-detail', args=[str(self.id)])
+
+    # def get_content_url(self):
+    #     """
+    #     Для отображения только текста книги
+    #     :return:
+    #     """
+    #     return reverse('book-file', args=[str(self.unit_file)])
+
+    def get_summary_url(self):
+        """
+        Для отображения только текста книги
+        :return:
+        """
+        return reverse('special', args=[str(self.id)])
+
+
 
 
 class Author(models.Model):
@@ -59,6 +79,10 @@ class Author(models.Model):
         :return:
         """
         return reverse('author-detail', args=[str(self.id)])
+
+
+
+
 
     def __str__(self):
         """

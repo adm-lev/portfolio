@@ -6,20 +6,20 @@
 
 {% block title %}{% endblock title %}
 
-
-
-
 {% block content %}
-<h1>Название: {{ book.title }}</h1>
-
-<p>Автор: <a href="#">{{ book.author }}</a></p>
+{% if book.picture %}
+<img src="{{ book.picture.url }}" alt="picture">
+{% endif %}
+<!--<p>{{ request.path }}</p>-->
+<p>{{ book.id }}</p>
+<p>Автор: <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
 <p>Аннотация: {{ book.summary }}</p>
 <p>ISBN: {{ book.isbn }}</p>
 <p>Язык: {{ book.language }}</p>
 <p>Жанр: {% for genre in book.genre.all %} {{ genre }}
     {% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
-
-
+<!--<a href="{2% url 'special' %2}?id={{ book.id }}">special</a>-->
+<a href="{{ book.get_summary_url }}">special</a>
 
 {% endblock content %}
