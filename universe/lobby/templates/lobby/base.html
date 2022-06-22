@@ -10,45 +10,48 @@
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-{% block sidebar %}
 
-<ul>
-    {% if user.is_authenticated %}
-        <li>User: {{ user.get_username }}</li>
-        <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
-    {% else %}
-        <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
-    {% endif %}
-</ul>
+<div class="header container">
 
-
-
-    <nav>
-        <ul>
-        <li><a href="{% url 'home' %}">Главная страница</a></li>
-        <li><a href="{% url 'about' %}">О проекте</a></li>
+        <ul class="navigation">
+            <li><a href="{% url 'home' %}">Главная страница</a></li>
+            <li><a href="{% url 'about' %}">О проекте</a></li>
+            <li><a href="#">Контакты</a></li>
         </ul>
-        <hr>
-        <ul>
+        <ul class="autorisation">
+            {% if user.is_authenticated %}
+                <li>Вы вошли как: {{ user.get_username }}</li>
+                <li><a href="{% url 'logout' %}?next={{ request.path }}">Выйти</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}?next={{ request.path }}">Авторизоваться</a></li>
+            {% endif %}
+            {% block login %}{% endblock login %}
+        </ul>
 
-        <li><a href="{% url 'library' %}">Персональная библиотека</a></li>
-        <li><a href="{% url 'checkers' %}">Игра "Шашки"</a></li>
-        <li><a href="{% url 'seabattle' %}">Игра "Морской бой"</a></li>
-        <li><a href="{% url 'tic_tac_toe' %}">Игра "Крестики нолики"</a></li>
-        <li><a href="{% url 'guitar_chords' %}">Аккорды для гитары</a></li>
-        <li><a href="{% url 'exchange_rates' %}">Курсы валют</a></li>
-        <li><a href="{% url 'file_converter' %}">Конвертер файлов</a></li>
-        <li><a href="{% url 'text_voice' %}">Конвертер текста в аудио</a></li>
-        <li><a href="{% url 'voice_text' %}">Конвертер голоса в текст</a></li>
-        <li><a href="{% url 'voice_recorder' %}">Запись голоса</a></li>
-        <li><a href="{% url 'tutorial_english' %}">Самоучитель английского языка</a></li>
+</div>
 
+<div class="middle sidebar">
+    {% block sidebar %}
+        <ul class="apps-menu">
+            <li><a href="{% url 'library' %}">Персональная библиотека</a></li>
+            <li><a href="{% url 'checkers' %}">Игра "Шашки"</a></li>
+            <li><a href="{% url 'seabattle' %}">Игра "Морской бой"</a></li>
+            <li><a href="{% url 'tic_tac_toe' %}">Игра "Крестики нолики"</a></li>
+            <li><a href="{% url 'guitar_chords' %}">Аккорды для гитары</a></li>
+            <li><a href="{% url 'exchange_rates' %}">Курсы валют</a></li>
+            <li><a href="{% url 'file_converter' %}">Конвертер файлов</a></li>
+            <li><a href="{% url 'text_voice' %}">Конвертер текста в аудио</a></li>
+            <li><a href="{% url 'voice_text' %}">Конвертер голоса в текст</a></li>
+            <li><a href="{% url 'voice_recorder' %}">Запись голоса</a></li>
+            <li><a href="{% url 'tutorial_english' %}">Самоучитель английского языка</a></li>
+        </ul>
+    {% endblock sidebar %}
+</div>
 
-            </ul>
-      </nav>
-{% endblock sidebar %}
 
     {% block content %}{% endblock content %}
-
+<div class="footer container">
+    Made by Eugene Lavrenko, 2022
+</div>
 </body>
 </html>

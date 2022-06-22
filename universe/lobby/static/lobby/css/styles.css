@@ -5,4 +5,22 @@
 
 body {
     background: #add8e6;
+
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.form-element {
+    padding-right: 0;
+}
+
+
+/* --------------Средний блок страницы ---------------------    */
+ul {
+    list-style: none;
 }

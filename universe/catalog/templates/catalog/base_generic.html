@@ -12,23 +12,33 @@
     {% endblock css_extra %}
 </head>
 <body>
-<h1>Персональная библиотека</h1>
-{% block sidebar %}
-<ul>
-    {% if user.is_authenticated %}
-        <li>Вы вошли как: {{ user.get_username }}</li>
-        <li><a href="{% url 'logout' %}?next={{ request.path }}">Выйти</a></li>
-    {% else %}
-        <li><a href="{% url 'login' %}?next={{ request.path }}">Авторизоваться</a></li>
-    {% endif %}
-</ul>
-<a href="/">Main Page</a>
 
+
+<div class="header container">
+
+        <ul class="navigation">
+            <li><a href="{% url 'home' %}">Главная страница</a></li>
+            <li><a href="{% url 'about' %}">О проекте</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <ul class="autorisation">
+            {% if user.is_authenticated %}
+                <li>Вы вошли как: {{ user.get_username }}</li>
+                <li><a href="{% url 'logout' %}?next={{ request.path }}">Выйти</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}?next={{ request.path }}">Авторизоваться</a></li>
+            {% endif %}
+            {% block login %}{% endblock login %}
+        </ul>
+
+</div>
+{% block sidebar %}
 <ul>
     <li><a href="{% url 'library' %}">Home</a></li>
     <li><a href="{% url 'books' %}">Books</a></li>
     <li><a href="{% url 'authors' %}">Authors</a></li>
 </ul>
+
 {% endblock sidebar %}
 {% block content %}{% endblock content %}
 </body>

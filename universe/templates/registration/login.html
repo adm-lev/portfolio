@@ -1,7 +1,7 @@
 {% extends 'lobby/base.html' %}
 
-{% block content %}
 
+{% block login %}
     {% if form.errors %}
         <p>username and password didn't match</p>
     {% endif %}
@@ -18,10 +18,10 @@
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
 
-    <ul>
-        <li>{{ form.username.label_tag }} {{ form.username }}</li>
-        <li>{{ form.password.label_tag }} {{ form.password }}</li>
-    </ul>
+
+    <p>{{ form.username.label_tag }} <span class="form-element username">{{ form.username }}</span></p>
+        <p>{{ form.password.label_tag }} <span class="form-element password">{{ form.password }}</span></p>
+
 
     <input type="submit" value="login">
     <input type="hidden" name="text" value="{{ next }}">
@@ -29,5 +29,6 @@
 </form>
 
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-
+{% endblock login %}
+{% block content %}
 {% endblock content %}
