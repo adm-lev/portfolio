@@ -3,19 +3,19 @@
 
 {% block login %}
     {% if form.errors %}
-        <p>username and password didn't match</p>
+        <p class="login-info">Неверные имя пользователя или пароль</p>
     {% endif %}
 
     {% if next %}
         {% if user.is.authenticated %}
-            <p>your account doesn't have access to this page</p>
+            <p class="login-info">Ваша учетная запись не имеет доступа к этой странице!</p>
         {% else %}
-            <p>please login to see this page</p>
+            <p class="login-info">Необходима авторизация!</p>
         {% endif %}
     {% endif %}
 
 
-<form method="post" action="{% url 'login' %}">
+<form class="login-form" method="post" action="{% url 'login' %}">
     {% csrf_token %}
 
 
@@ -25,10 +25,10 @@
 
     <input type="submit" value="login">
     <input type="hidden" name="text" value="{{ next }}">
-
+    <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
 </form>
 
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
 {% endblock login %}
 {% block content %}
 {% endblock content %}

@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock title %}</title>
 </head>
-<body>
+<body class="body-space">
 
 <div class="header container">
 
@@ -30,9 +30,9 @@
 
 </div>
 
-<div class="middle sidebar">
+<div class="middle container">
     {% block sidebar %}
-        <ul class="apps-menu">
+        <ul class="apps-menu sidebar">
             <li><a href="{% url 'library' %}">Персональная библиотека</a></li>
             <li><a href="{% url 'checkers' %}">Игра "Шашки"</a></li>
             <li><a href="{% url 'seabattle' %}">Игра "Морской бой"</a></li>
@@ -46,10 +46,8 @@
             <li><a href="{% url 'tutorial_english' %}">Самоучитель английского языка</a></li>
         </ul>
     {% endblock sidebar %}
-</div>
-
-
     {% block content %}{% endblock content %}
+</div>    
 <div class="footer container">
     Made by Eugene Lavrenko, 2022
 </div>
