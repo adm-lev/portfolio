@@ -1,35 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     {% load static %}
 
-    <title>{% block title %}Checkers{% endblock title %}</title>
+    <title>{% block title %}Приложение{% endblock title %}</title>
     {% block css_extra %}
-    <link rel="stylesheet" type="text/css" href="{% static 'checkers/css/styles.css' %}">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'checkers/images/chck_logo.jpeg' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'catalog/css/styles.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'catalog/images/321.png' %}">
     {% endblock css_extra %}
 </head>
 <body>
 
-{% block sidebar %}
-<ul>
-    {% if user.is_authenticated %}
-        <li>User: {{ user.get_username }}</li>
-        <li><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a></li>
-    {% else %}
-        <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
-    {% endif %}
-</ul>
-<a href="/">Main Page</a>
-<img src="{% static 'checkers/images/checkers.jpg' %}" width="200" alt="picture!!!!!">
-<ul>
-    <li><a href="{% url 'checkers' %}">Home</a></li>
-    <li><a href="#">something</a></li>
-    <li><a href="#">something else</a></li>
-</ul>
-{% endblock sidebar %}
-{% block content %}{% endblock content %}
+
+    <div class="header container">
+
+        <ul class="navigation">
+            <li><a href="{% url 'home' %}">Главная страница</a></li>
+            <li><a href="{% url 'about' %}">О проекте</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <ul class="autorisation">
+            {% if user.is_authenticated %}
+                <li>Вы вошли как: {{ user.get_username }}</li>
+                <li><a href="{% url 'logout' %}?next={{ request.path }}">Выйти</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}?next={{ request.path }}">Авторизоваться</a></li>
+            {% endif %}
+            {% block login %}{% endblock login %}
+        </ul>
+
+</div>
+<div class="middle container">
+    {% block sidebar %}
+    <ul class="library-menu sidebar">
+        <li><a href="#">Здесь будет навигация</a></li>
+        <li><a href="#">Здесь будет навигация</a></li>
+        <li><a href="#">Здесь будет навигация</a></li>
+    </ul>
+
+    {% endblock sidebar %}
+    {% block content %}{% endblock content %}
+</div>
+<div class="footer container">
+    Made by Eugene Lavrenko, 2022
+</div>
 </body>
 </html>

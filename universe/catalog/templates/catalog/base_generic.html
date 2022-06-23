@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,7 @@
 <body>
 
 
-<div class="header container">
+    <div class="header container">
 
         <ul class="navigation">
             <li><a href="{% url 'home' %}">Главная страница</a></li>
@@ -32,14 +31,19 @@
         </ul>
 
 </div>
-{% block sidebar %}
-<ul>
-    <li><a href="{% url 'library' %}">Home</a></li>
-    <li><a href="{% url 'books' %}">Books</a></li>
-    <li><a href="{% url 'authors' %}">Authors</a></li>
-</ul>
+<div class="middle container">
+    {% block sidebar %}
+    <ul class="library-menu sidebar">
+        <li><a href="{% url 'library' %}">Home</a></li>
+        <li><a href="{% url 'books' %}">Books</a></li>
+        <li><a href="{% url 'authors' %}">Authors</a></li>
+    </ul>
 
-{% endblock sidebar %}
-{% block content %}{% endblock content %}
+    {% endblock sidebar %}
+    {% block content %}{% endblock content %}
+</div>
+<div class="footer container">
+    Made by Eugene Lavrenko, 2022
+</div>
 </body>
 </html>
