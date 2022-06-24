@@ -1,0 +1,32 @@
+{% extends 'file_converter/base_generic.html' %}
+
+
+
+{% block title %}file_converter{% endblock title %}
+
+
+
+    {% block sidebar %}
+    <ul class="library-menu sidebar">
+        <li><a href="{% url 'file_converter' %}">Конвертация файла</a></li>
+        <li><a href="#">Здесь будет навигация</a></li>
+        <li><a href="#">Здесь будет навигация</a></li>
+    </ul>
+
+    {% endblock sidebar %}
+{% block content %}
+
+
+<p>Загрузите, пожалуйста, изображение или pdf</p>
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="my_file1">
+    <button type="submit">Загрузка</button>
+</form>
+
+<p>Ссылка на <a href="{{ file_url }}">{{ file_url }}</a></p>
+<p>Вы загрузили: {{ type }}</p>
+<p>{{ res_text }}</p>
+
+{% endblock content %}

@@ -8,10 +8,9 @@
 
 {% block content %}
 {% if book.picture %}
-<img src="{{ book.picture.url }}" alt="picture">
+<img src="{{ book.picture.url }}" width="200" alt="picture">
 {% endif %}
-<!--<p>{{ request.path }}</p>-->
-<p>{{ book.id }}</p>
+
 <p>Автор: <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
 <p>Аннотация: {{ book.summary }}</p>
 <p>ISBN: {{ book.isbn }}</p>
@@ -20,6 +19,6 @@
     {% if not forloop.last %}, {% endif %}{% endfor %}</p>
 
 <!--<a href="{2% url 'special' %2}?id={{ book.id }}">special</a>-->
-<a href="{{ book.get_summary_url }}">special</a>
+<a href="{{ book.get_summary_url }}">Читать книгу</a>
 
 {% endblock content %}
