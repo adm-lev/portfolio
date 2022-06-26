@@ -67,30 +67,30 @@ def load_files(request):
     return render(request, 'file_converter/load_file.html')
 
 
-def test():
-
-    img = cv2.imread('/home/devlev/portfolio/universe/media/converter/files/111.jpeg')
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    # cv2.imshow('Result', img)
-    # cv2.waitKey(0)
-
-    return pytesseract.image_to_string(img)
-
-
-def test2():
-    file = fitz.open('/home/devlev/portfolio/universe/media/converter/files/clients.pdf')
-
-    # doc = docx.Document()
-
-    for pageNum, page in enumerate(file.pages(), start=1):
-        text = page.get_text()
-        print(text)
-        # doc.add_paragraph(text)
-        # doc.save('test.docx')
-        if pageNum == 1:
-            break
-
-        return text
+# def test():
+#
+#     img = cv2.imread('/home/devlev/portfolio/universe/media/converter/files/111.jpeg')
+#     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+#     # cv2.imshow('Result', img)
+#     # cv2.waitKey(0)
+#
+#     return pytesseract.image_to_string(img)
+#
+#
+# def test2():
+#     file = fitz.open('/home/devlev/portfolio/universe/media/converter/files/clients.pdf')
+#
+#     # doc = docx.Document()
+#
+#     for pageNum, page in enumerate(file.pages(), start=1):
+#         text = page.get_text()
+#         print(text)
+#         # doc.add_paragraph(text)
+#         # doc.save('test.docx')
+#         if pageNum == 1:
+#             break
+#
+#         return text
 
 
 
