@@ -17,7 +17,7 @@
 {% block content %}
 
 
-<p>Загрузите, пожалуйста, изображение или pdf</p>
+<p>Загрузите, пожалуйста, изображение</p>
 
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -26,7 +26,9 @@
 </form>
 
 <p>Ссылка на <a href="{{ file_url }}">{{ file_url }}</a></p>
-<p>Вы загрузили: {{ type }}</p>
+<p>Ваше изображение:</p>
+<img src="{{ file_url}}" alt="">
+<p>Распознанный текст:</p>
 <p>{{ res_text }}</p>
 
 {% endblock content %}
