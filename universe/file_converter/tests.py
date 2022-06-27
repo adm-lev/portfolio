@@ -5,12 +5,12 @@ from pdf2image import convert_from_path
 import fitz
 import docx
 
-img = cv2.imread('image.jpg')
-img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-# cv2.imshow('Result', img)
-# cv2.waitKey(0)
-
-print(pytesseract.image_to_string(img))
+# img = cv2.imread('image.jpg')
+# img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+# # cv2.imshow('Result', img)
+# # cv2.waitKey(0)
+#
+# print(pytesseract.image_to_string(img))
 """--------------------------------------------------------------------------"""
 # pages = convert_from_path('321.pdf', 100)
 # pages[0].save('out.jpg', 'JPEG')
@@ -32,6 +32,8 @@ print(pytesseract.image_to_string(img))
 #     doc.save('test.docx')
 #     if pageNum == 1:
 #         break
+
+
 
 
 

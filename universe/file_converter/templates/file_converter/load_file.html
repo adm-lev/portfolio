@@ -17,18 +17,22 @@
 {% block content %}
 
 
-<p>Загрузите, пожалуйста, изображение</p>
+<p>Загрузите, пожалуйста, изображение или файл PDF</p>
 
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="my_file1">
     <button type="submit">Загрузка</button>
 </form>
-
-<p>Ссылка на <a href="{{ file_url }}">{{ file_url }}</a></p>
-<p>Ваше изображение:</p>
-<img src="{{ file_url}}" alt="">
-<p>Распознанный текст:</p>
-<p>{{ res_text }}</p>
-
+    {% if doc_url %}
+        <p><a href="{{ doc_url }}">Скачать результат в формате docx</a></p>
+        <!--<p>Ссылка на <a href="{{ file_url }}">{{ file_url }}</a></p>-->
+    {% endif %}
+    {% if file_url %}
+        <p>Ваше изображение:</p>
+        <img src="{{ file_url }}" alt="">
+        <p>Распознанный текст:</p>
+        <p>{{ res_text }}</p>
+    {% endif %}
+<p>{{ message }}</p>
 {% endblock content %}

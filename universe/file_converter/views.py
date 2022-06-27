@@ -30,29 +30,37 @@ def load_files(request):
         filename = fs.save(os.path.join('converter', 'files', file.name), file)
         file_url = fs.url(filename)
         name = file.name
-        extention = ''
+        extention = file.name.split('.')
+        allow_image_list = ['bmp', 'dib', 'jpeg', 'jpg', 'jpe', 'jp2', 'png',
+                            'pbm', 'pgm', 'sr', 'ras', 'tiff', 'tif']
         res_text = ''
+        doc_url = ''
+        message = ''
 
-        if name.endswith('docx'):
-            extention = 'word document'
-        elif name.endswith('pdf'):
-            pages = convert_from_path(filename, 100)
-            pages[0].save('out.jpg', 'JPEG')
+        if extention[1].lower() == 'pdf':
+            file = fitz.open(os.path.join(settings.MEDIA_ROOT, 'converter/files/', name))
 
-            imgcv = cv2.imread(request.FILES['my_file1'])
+            doc = docx.Document()
 
-            imgcv = cv2.cvtColor(imgcv, cv2.COLOR_BGR2RGB)
+            for pageNum, page in enumerate(file.pages(), start=1):
+                text = page.get_text()
+                doc.add_paragraph(text)
+                doc.save(os.path.join(settings.MEDIA_ROOT, 'converter/files/', extention[0] + '.docx'))
+                # if pageNum == 1:
+                #     break
+            file_url = ''
+            doc_url = '/media/converter/files/' + extention[0] + '.docx'
 
-            res_text = pytesseract.image_to_string(imgcv)
+        elif extention[1].lower() in allow_image_list:
 
-        elif name.endswith('jpeg'):
-            # img = cv2.imread('/home/devlev/portfolio/universe/media/converter/files/222.jpeg')
-            img = cv2.imread(os.path.join(settings.MEDIA_ROOT, 'converter/files/', file.name))
+            img = cv2.imread(os.path.join(settings.MEDIA_ROOT, 'converter/files/', name))
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            # cv2.imshow('Result', img)
-            # cv2.waitKey(0)
-            # print(img)
+
             res_text = pytesseract.image_to_string(img)
+
+        else:
+            file_url = ''
+            message = 'Неподходящий формат файла :-('
 
         return render(
             request,
@@ -60,9 +68,11 @@ def load_files(request):
             {
                 'file_url': file_url,
                 'file_name': file.name,
-                'type': extention,
+                'doc_url': doc_url,
                 'res_text': res_text,
+                'message': message,
             }
+
         )
     return render(request, 'file_converter/load_file.html')
 
