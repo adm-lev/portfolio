@@ -4,7 +4,7 @@
 }
 
 .body-space {
-    background: #add8e6;
+    background-image: url(../images/book_back.jpg) ;
     display: flex;
     flex-direction: column;
     
@@ -79,6 +79,19 @@ ul {
 .sidebar a {
     color:aliceblue;
 }
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-list-item {
+    padding: 5px;
+    margin: 5px;
+}
+
+
+
 
 /* ------ Блок футера ------------------ */
 

@@ -7,16 +7,27 @@
 
 
 {% block content %}
-<h1>Book list</h1>
+<h1 class="h1 describtion">В данном приложении представлены книги различных авторов и жанров для ознакомления.
+    Скачивать документы нельзя из-за наличия правообладателей</h1>
 
 {% if book_list %}
-<ul>
+<div class="book-list-cont">
+<ul class="book-list">
     {% for book in book_list %}
-    <li><a href="{{ book.get_absolute_url }}">{{ book.title }}</a>{{ book.author }}</li>
+    <li class="book-list-item">
+        {% if book.picture %}
+        <img src="{{ book.picture.url }}" width="200" height="312" alt=""><br>
+        {% endif %}
+        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a><br>{{ book.author }}
+
+    </li>
     {% endfor %}
 </ul>
+</div>
 {% else %}
+<div class="book-list-cont">
 <p>There are no books in the library</p>
+</div>
 {% endif %}
 
 

@@ -6,9 +6,15 @@
 
 
 <div class="text-container">
-{% for para in docfile.paragraphs %}
-        <p class="text-paragraph text-element">{{ para.text }}</p>
-{% endfor %}
+        {% if extention == 'docx' %}
+                {% for para in docfile.paragraphs %}
+                        <p class="text-paragraph text-element">{{ para.text }}</p>
+                {% endfor %}
+        {% elif extention == 'pdf' %}
+                {% for page in docfile %}
+                        <p class="text-paragraph text-element">{{ page.get_text }}</p>
+                {% endfor %}
+        {% endif %}
 </div>
 
 

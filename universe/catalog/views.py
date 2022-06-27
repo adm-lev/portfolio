@@ -4,8 +4,11 @@ from django.views import generic
 import os
 import textract
 import docx
+import fitz
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def index(request):
     """
 
@@ -26,14 +29,29 @@ def index(request):
     )
 
 
+@login_required
 def reading(request, pk):
     summary = Book.objects.get(id=pk)
     book_path = summary.unit_file
-    docfile = docx.Document(os.path.join('media', str(book_path)))
+    extention = str(book_path).split('.')
+    if extention[1] == 'docx':
+        docfile = docx.Document(os.path.join('media', str(book_path)))
+        return render(request, 'catalog/book_read.html', context={'docfile': docfile, 'extention': extention[1]})
 
-    return render(request, 'catalog/book_read.html', context={'docfile': docfile})
+    elif extention[1] == 'pdf':
+        pdf_file = fitz.open(os.path.join('media', str(book_path)))
+        return render(request, 'catalog/book_read.html', context={'docfile': pdf_file, 'extention': extention[1]})
 
 
+@login_required
+def reading_pdf(request, pk):
+    summary = Book.objects.get(id=pk)
+    book_path = summary.unit_file
+
+    pdf_file = fitz.open(os.path.join('media', str(book_path)))
+
+
+@login_required
 def special(request, pk):
     summary = Book.objects.get(id=pk)
     book_path = summary.unit_file
