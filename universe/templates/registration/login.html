@@ -19,8 +19,8 @@
     {% csrf_token %}
 
 
-    <p>{{ form.username.label_tag }} <span class="form-element username">{{ form.username }}</span></p>
-        <p>{{ form.password.label_tag }} <span class="form-element password">{{ form.password }}</span></p>
+    <p><span class="form-element username">{{ form.username }}</span></p>
+    <p><span class="form-element password">{{ form.password }}</span></p>
 
 
     <input type="submit" value="login">

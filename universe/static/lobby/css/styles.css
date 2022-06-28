@@ -24,12 +24,35 @@ a {
 
 }
 
+.apps-menu {
+    display: flex;
+    width: 500px;
+}
+
+.menu-icon:hover {
+    box-shadow: 0px 0px 15px 10px #fff; transition: 0.5s;
+    background-color: #fff;
+}
+
+.apps-menu li {
+    height: 30px;
+    margin: 5px 5px;
+    padding: 5px;
+    text-align: center;
+    }
+
+.autorisation {
+    width: 200px;
+}
+
 .autorisation li {
     text-align: right;
+
 }
 
 .login-info {
     text-align: right;
+
 }
 
 .login-form {

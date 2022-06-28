@@ -18,6 +18,23 @@
             <li><a href="{% url 'about' %}">О проекте</a></li>
             <li><a href="#">Контакты</a></li>
         </ul>
+        <ul class="apps-menu">
+
+            <li><a href="{% url 'library' %}"><img class="menu-icon" width="50"
+                                                   src="../../static/lobby/images/books.svg" alt=""></a></li>
+            <li><a href="{% url 'checkers' %}"><img class="menu-icon" width="50"
+                                                    src="../../static/lobby/images/games.svg" alt=""></a></li>
+            <li><a href="{% url 'guitar_chords' %}"><img class="menu-icon" width="50"
+                                                         src="../../static/lobby/images/guitar.svg" alt=""></a></li>
+            <li><a href="{% url 'exchange_rates' %}"><img class="menu-icon" width="50"
+                                                          src="../../static/lobby/images/rates.svg" alt=""></a></li>
+            <li><a href="{% url 'file_converter' %}"><img class="menu-icon" width="50"
+                                                          src="../../static/lobby/images/files.svg" alt=""></a></li>
+            <li><a href="{% url 'tutorial_english' %}"><img class="menu-icon" width="50"
+                                                            src="../../static/lobby/images/language.svg" alt=""></a></li>
+
+        </ul>
+    <div class="auto-m">
         <ul class="autorisation">
             {% if user.is_authenticated %}
                 <li>Вы вошли как: {{ user.get_username }}</li>
@@ -25,26 +42,14 @@
             {% else %}
                 <li><a href="{% url 'login' %}?next={{ request.path }}">Авторизоваться</a></li>
             {% endif %}
-            {% block login %}{% endblock login %}
         </ul>
-
+        {% block login %}{% endblock login %}
+    </div>
 </div>
 
 <div class="middle container">
     {% block sidebar %}
-        <ul class="apps-menu sidebar">
-            <li><a href="{% url 'library' %}">Персональная библиотека</a></li>
-            <li><a href="{% url 'checkers' %}">Мини-игры</a></li>
-<!--            <li><a href="{% url 'seabattle' %}">Игра "Морской бой"</a></li>-->
-<!--            <li><a href="{% url 'tic_tac_toe' %}">Игра "Крестики нолики"</a></li>-->
-            <li><a href="{% url 'guitar_chords' %}">Аккорды для гитары</a></li>
-            <li><a href="{% url 'exchange_rates' %}">Курсы валют</a></li>
-            <li><a href="{% url 'file_converter' %}">Работа с файлами</a></li>
-<!--            <li><a href="{% url 'text_voice' %}">Конвертер текста в аудио</a></li>-->
-<!--            <li><a href="{% url 'voice_text' %}">Конвертер голоса в текст</a></li>-->
-<!--            <li><a href="{% url 'voice_recorder' %}">Запись голоса</a></li>-->
-            <li><a href="{% url 'tutorial_english' %}">Самоучитель английского языка</a></li>
-        </ul>
+
     {% endblock sidebar %}
     <h1>Творческий учебный проект на фреймфорке Django 4.0.5</h1>
     <p>Для пользования контентом можно использовать эти учетные данные:</p>
