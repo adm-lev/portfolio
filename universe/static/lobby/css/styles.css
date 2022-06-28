@@ -41,6 +41,11 @@ a {
 
 /* --------------Средний блок страницы ---------------------    */
 
+.arrow-login {
+    position: absolute;
+    right: 50px;
+}
+
 .middle {
     min-height: 80vh;
 }
